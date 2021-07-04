@@ -1,5 +1,6 @@
 import time
 
+
 class Lww:
     """
     A class to represent a Last-Write-Win Element Graph with functionalities to add a vertex/edge,
@@ -68,9 +69,10 @@ class Lww:
 
     def lookupVertexExists(self, vertex):
 
-        if vertex in self.vertices_added_set and \
-                (vertex not in self.vertices_removed_set or
-                 self.vertices_added_set[vertex] > self.vertices_removed_set[vertex]):
+        if vertex in self.vertices_added_set and (
+            vertex not in self.vertices_removed_set
+            or self.vertices_added_set[vertex] > self.vertices_removed_set[vertex]
+        ):
             return True
         else:
             return False
@@ -94,7 +96,10 @@ class Lww:
                     connected.append(connection[0])
                 else:
                     for r_connection in removed_connections:
-                        if connection[0] == r_connection[0] and connection[1] > r_connection[1]:
+                        if (
+                            connection[0] == r_connection[0]
+                            and connection[1] > r_connection[1]
+                        ):
                             connected.append(connection[0])
 
             return connected
@@ -105,4 +110,3 @@ class Lww:
     def merge(self, received_state):
         # TODO: consider concurrent transactions
         print("hello")
-
