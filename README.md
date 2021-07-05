@@ -115,3 +115,7 @@ pip3 install -r ./requirements.txt
 ```
 pytest -vvs ./test
 ```
+ <br />
+ 
+### Author
+[Eniko Varga](eniko.varga@live.com)
